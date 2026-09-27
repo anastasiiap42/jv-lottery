@@ -1,9 +1,10 @@
 package model;
 
-import java.util.Random;
+import core.basesyntax.ColorSupplier;
 
 public class Lottery {
 
+    private static final int MAX_NUMBER = 100;
     final ColorSupplier colorSupplier;
 
     public Lottery() {
@@ -11,6 +12,6 @@ public class Lottery {
     }
 
     public Ball getRandomBall() {
-        return new Ball(colorSupplier.getRandomColor(), new Random().nextInt(100));
+        return new Ball(colorSupplier.getRandomColor(), colorSupplier.random.nextInt(MAX_NUMBER + 1));
     }
 }
