@@ -5,14 +5,18 @@ import java.util.Random;
 
 public class ColorSupplier {
 
-    public Random random;
+    private final Random random;
 
     public ColorSupplier() {
-        random = new Random();
+        this.random = new Random();
+    }
+
+    public Random getRandom() {
+        return this.random;
     }
 
     public Color getRandomColor() {
-        int index = random.nextInt(Color.values().length);
+        int index = this.random.nextInt(Color.values().length);
         return Color.values()[index];
     }
 }
